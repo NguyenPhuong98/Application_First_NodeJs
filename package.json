@@ -1,0 +1,37 @@
+{
+  "name": "app-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write 'src/**/*.{js, json, scss}'",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenPhuong98/Application_First_NodeJs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "PhuongNguyen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js, json, scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "inspector": "^0.5.0",
+    "lint-staged": "^10.5.3",
+    "morgan": "^1.10.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}
