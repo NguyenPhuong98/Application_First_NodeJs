@@ -18,6 +18,7 @@ db.connect()
 app.use(express.static(path.join(__dirname, 'public')));
 //HTTP logger
 app.use(morgan('combined'));
+app.use(express.urlencoded());
 
 // Template engine
 app.engine(
