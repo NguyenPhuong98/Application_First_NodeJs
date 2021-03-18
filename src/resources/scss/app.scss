@@ -1,9 +1,10 @@
 @import 'variable';
 
-h1 {
-    color: $text-color;
-}
-
 .card-course-item {
     margin-top: 12px;
+}
+
+.form-control-select-option {
+    width: 160px;
+    margin: 0 10px;
 }
