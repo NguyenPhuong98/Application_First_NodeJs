@@ -16,19 +16,26 @@
       <button type="submit" class="btn btn-primary" id="btn-exec" disabled>Áp dụng</button>
     </div>
     
-    <table class="table mt-4">
+    <table class="table mt-4 table-bordered">
         <thead>
             <tr>
               <th scope="col"></th>
               <th scope="col">#</th>
               <th scope="col">
                 Tên Khoá học
-                <a href="?_sort&column=name&type=asc">
+                {{!-- <a href="?_sort&column=name&type=asc">
                   <span class="oi oi-elevator"></span>
-                </a>
+                </a> --}}
+                {{{sortable 'name' _sort}}}
               </th>
-              <th scope="col">Trình độ</th>
-              <th scope="col">Thời gian tạo</th>
+              <th scope="col">
+                Trình độ
+                {{{sortable 'level' _sort}}}
+              </th>
+              <th scope="col">
+                Thời gian tạo
+                {{{sortable 'createdAt' _sort}}}
+                </th>
               <th scope="col"></th>
             </tr>
         </thead>
@@ -112,7 +119,6 @@
 
         CheckboxAll.change(function() {
           countItemCheckbox.prop('checked', $(this).is(':checked'));
-          console.log(1);
           renderCheckAllSubmitBtn();
         })
 
@@ -125,7 +131,8 @@
         // Re-render Check All Submit Btn
         function renderCheckAllSubmitBtn() {
           var checkedCount = $('input[name="courseIds[]"]:checked').length;
-          checkedCount > 0 ? btnExec.removeAttr('disabled') : btnExec.addAttr('disabled');
+          console.log(checkedCount);
+          checkedCount > 0 ? btnExec.prop('disabled', false) : btnExec.prop('disabled', true);
         }
 
         

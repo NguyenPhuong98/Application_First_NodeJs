@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
 async function connect() {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/shopee_dev', {
+        await mongoose.connect('mongodb://127.0.0.1:27017/f8_Education_dev', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
-            useCreateIndex: true
+            useCreateIndex: true,
         });
-        console.log('Connect Successed')
+        console.log('Connect Successed');
     } catch (error) {
-        console.log('Connect Failed')
+        console.log('Connect Failed');
     }
-    
 }
 
-module.exports = { connect }
+module.exports = { connect };

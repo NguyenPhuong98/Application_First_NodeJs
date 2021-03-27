@@ -1,18 +1,17 @@
-const Item = require('../models/Course')
-const {multipleMongooseToObject} = require('../../util/mongoose')
+const Course = require('../models/Course');
+const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     home(req, res, next) {
-
-        // Item.find({}, function (err, items) {
+        // Course.find({}, function (err, courses) {
         //     if(!err) {
-        //         res.json(items);
+        //         res.json(courses);
         //     } else {
         //         res.status(400).json({error: 'ERROR'});
         //     }
         //   });
 
-        //   Item.find({})
+        //   Course.find({})
         //     .then(courses => {
         //         const context = {
         //             cours: courses.map(course => {
@@ -25,10 +24,10 @@ class SiteController {
         //         }
         //     res.render('home', {courses: context.cours});
         //     })
-        Item.find({})
-            .then(courses => {
+        Course.find({})
+            .then((courses) => {
                 res.render('home', {
-                    courses: multipleMongooseToObject(courses)
+                    courses: multipleMongooseToObject(courses),
                 });
             })
             .catch(next);
