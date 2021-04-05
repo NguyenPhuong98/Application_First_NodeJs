@@ -18,7 +18,7 @@ const db = require('./config/db');
 db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/img/avatar.jpg')));
+
 //HTTP logger
 app.use(morgan('combined'));
 app.use(express.urlencoded({ extended: true }));

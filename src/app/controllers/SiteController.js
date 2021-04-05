@@ -34,8 +34,14 @@ class SiteController {
         // return res.render('home');
     }
 
-    search(req, res) {
+    // [GET] /search
+    search(req, res, next) {
         return res.render('search');
+    }
+
+    // [GET] /login
+    login(req, res, next) {
+        return res.render('login');
     }
 }
 
