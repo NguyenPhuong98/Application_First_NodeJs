@@ -1,15 +1,69 @@
 <div class="mt-4">
     <div class="row">
-        <div class="col-lg-6">
-            <h1>{{course.name}}</h1>
-            <p>{{course.description}}</p>
-            <h2>Bạn sẽ học được gì</h2>
+        <div class="col-lg-8 col-md-8">
+            <h1 class="title-detail-course">{{course.name}}</h1>
+            <p class="descrip-detail-course">{{course.description}}</p>
+            <h2 class="title-knowledge-learn">Bạn sẽ học được gì</h2>
+                <table class="table table-borderless">
+                    <tbody>
+                        {{#each contentLearn}}
+                        <tr>
+                            <td class="knowledge-learn">
+                                <span class="oi oi-check icon-knowledge-learn"></span>
+                                {{this}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                        {{!-- <tr>
+                            <td>
+                                <span class="oi oi-check"></span>
+                                Biết cách làm việc với Mongoose, MongoDB trong NodeJS
+                            </td>
+                            <td>
+                                <span class="oi oi-check"></span>
+                                Hiểu rõ tư tưởng và cách hoạt động của mô hình MVC
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="oi oi-check"></span>
+                                Biết cách làm việc với Mongoose, MongoDB trong NodeJS
+                            </td>
+                            <td>
+                                <span class="oi oi-check"></span>
+                                Hiểu rõ tư tưởng và cách hoạt động của mô hình MVC
+                            </td>
+                        </tr> --}}
+                    </tbody>
+                </table>
             <h2>Nội dung khóa học</h2>
         </div>
 
-        <div class="col-lg-6">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoId}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <button>Đăng ký học</button>
+        <div class="col-lg-4 col-md-4 show-course">
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/{{course.videoId}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="status-register-course">Bạn chưa đăng ký khóa học này!</p>
+            <p class="status-register-course d-none">Bạn đã đăng ký khóa học này!</p>
+            <button class="btn btn-register-course">Đăng ký học</button>
+            <button class="btn btn-register-course d-none">Học tiếp</button>
+
+            <div class="list-info-course">
+                <div class="item-info-course">
+                    <span class="oi oi-dashboard"></span>
+                    Trình độ cơ bản
+                </div>
+                <div class="item-info-course">
+                    <span class="oi oi-document"></span>
+                    Tổng số 8 bài học
+                </div>
+                <div class="item-info-course">
+                    <span class="oi oi-clock"></span>
+                    Thời lượng 02 giờ 15 phút
+                </div>
+                <div class="item-info-course">
+                    <span class="oi oi-battery-full"></span>
+                    Học mọi lúc mọi nơi
+                </div>
+            </div>
         </div>
     </div>
 </div>

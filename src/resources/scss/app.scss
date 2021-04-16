@@ -1,4 +1,46 @@
 @import 'variable';
+
+.body {
+    min-height: 100vh;
+    clear: both;
+    min-height: 400px;
+    margin-bottom: 400px;
+}
+
+.content-web {
+    margin-bottom: 100px;
+    min-height: 50vh;
+}
+// ===================== navbar Header=====================
+.navbar-total {
+    font-size: 1.6rem;
+}
+
+.navbar-label {
+    font-size: 2.4rem;
+}
+
+.nav-item > .nav-item-select {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $text-item_header;
+    margin-left: 16px;
+    font-weight: 700;
+}
+
+.navbar-dropdown {
+    flex-direction: row;
+}
+.avatar {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 5px 5px 0 0;
+}
+
+.drop-menu-header a {
+    font-size: 1.6rem;
+}
 // ===================== login =====================
 * {
     padding: 0;
@@ -17,6 +59,7 @@ html {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .form {
@@ -45,7 +88,7 @@ html {
 
 .form-label {
     display: block;
-    padding: 24px 0 8px 0;
+    padding: 12px 0 4px 0;
     font-size: 1.4rem;
     width: 100%;
     font-weight: 600;
@@ -55,6 +98,7 @@ html {
 .form-control {
     width: 100%;
     font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 8px 8px;
     outline: none;
     border: 1px solid #b3b3b3;
@@ -99,27 +143,258 @@ input[name='gender'] {
     cursor: pointer;
 }
 
-// Khóa học
+// ================= Home =================
+.list-attract-member {
+    display: flex;
+}
+
+.item-attract-member {
+    border: 1px solid #ccc;
+}
+
+.title-home {
+    display: block;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.descript-home {
+    display: block;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
 .card-course-item {
     margin-top: 12px;
-    height: 520px;
+    height: 450px;
+    font-size: 1.4rem;
 }
 
-.form-control-select-option {
+.card-title-course {
+    font-size: 1.6rem;
+}
+
+.btn-course {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+// ================= Me Course =================
+.title-me-course {
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.action-me-course {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-action-me-course {
+    font-size: 1.6rem;
+}
+
+.item-action-me-course:hover {
+    text-decoration: none;
+}
+
+.form-handling {
+    font-size: 1.6rem;
+}
+
+.form-check-input {
+    margin-top: 6px;
+}
+
+.form-check-label {
+    margin-left: 4px;
+}
+
+select.form-control-select-option:not([size]):not([multiple]) {
     width: 160px;
     margin: 0 10px;
+    height: 36px;
 }
 
-.nav-item > .nav-item-select {
-    font-size: 1.2rem;
+.btn-apply {
+    font-size: 1.6rem;
+}
+
+.table-course,
+.table-deleted-course {
+    font-size: 1.6rem;
+}
+
+.btn-action {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-edit,
+.btn-delete {
+    font-size: 1.6rem;
+    color: #212529;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
     text-decoration: none;
-    color: $text-item_header;
-    margin-left: 16px;
+}
+
+.icon-edit {
+    padding-left: 4px;
+}
+.bound-btn {
+    border: 1px solid #111;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #d9ecf5;
+}
+
+.bound-btn:nth-child(1) {
+    margin-right: 8px;
+}
+// ================= Add Course =================
+.btn-add-course {
+    font-size: 1.6rem;
+    // margin-bottom: 50px;
+}
+// ================= Edit Course =================
+.label-input {
+    font-size: 1.6rem;
+}
+
+.textarea-descrip {
+    min-height: 20px;
+}
+
+// ================= Show Course =================
+.title-detail-course {
+    font-size: 2.6rem;
     font-weight: 700;
 }
 
-.avatar {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
+.descrip-detail-course {
+    font-size: 1.6rem;
+}
+
+.title-knowledge-learn {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.knowledge-learn {
+    font-size: 1.6rem;
+}
+
+.icon-knowledge-learn {
+    color: #b4320c;
+}
+
+.show-course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0;
+    justify-content: space-evenly;
+}
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.btn-register-course {
+    background-color: $primary-color;
+    font-size: 1.6rem;
+    color: white;
+    border-radius: 8px;
+}
+
+.status-register-course {
+    font-size: 1.6rem;
+}
+
+.list-info-course {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info-course {
+    font-size: 1.6rem;
+}
+
+// ================= Footer =================
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+}
+.text-title-footer {
+    color: $text-item_header;
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: 16px;
+}
+
+.text-content-footer {
+    color: $text-content-footer;
+    font-size: 1.6rem;
+}
+
+#form-register-info {
+    font-size: 1.6rem;
+}
+
+.input-register-info {
+    color: $text-content-footer;
+    width: 100%;
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: none;
+}
+
+.btn-register-info {
+    color: $text-item_header;
+    background-color: $primary-color;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 16px;
+}
+
+.copyright {
+    background-color: black;
+    color: white;
+    font-size: 1.6rem;
+    // position: absolute;
+    // bottom: -10px   ;
+    width: 100%;
+}
+
+// Media Queries
+@media (max-width: 600px) {
+    .footer {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        min-height: 320px;
+    }
 }

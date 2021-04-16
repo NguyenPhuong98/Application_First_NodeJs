@@ -18,6 +18,8 @@ const db = require('./config/db');
 db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app/controllers')));
+// app.use(express.static(path.join(__dirname, 'public/img')));
 
 //HTTP logger
 app.use(morgan('combined'));
@@ -53,6 +55,10 @@ app.engine(
                 return `<a href="?_sort&column=${field}&type=${type}">
                     <span class="${icon}"></span>
                 </a>`;
+            },
+            stringToArray: (data) => {
+                console.log(data.toString().split(','));
+                return data.toString().split(',');
             },
         },
     }),

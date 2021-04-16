@@ -1,4 +1,17 @@
 <div class="mt-4 mb-4">
+  <div class="list-attract-member">
+    <div class="col-lg-4 col-sm-12 item-attract-member">
+      <img src="../../public/img/member.png" alt="">
+    </div>
+    <div class="col-lg-4 col-sm-12 item-attract-member">
+      <img src="../../public/img/courses.png" alt="">
+    </div>
+    <div class="col-lg-4 col-sm-12 item-attract-member">
+      <img src="../../public/img/time-learn.png" alt="">
+    </div>
+  </div>
+  <h1 class="title-home">Các khóa học nổi bật</h1>
+  <p class="descript-home">Những khóa học có số lượng thành viên theo học nhiều nhất và có phản hồi tích cực nhất</p>
   <div class="row">
     {{#each courses}}
     <div class="col-sm-6 col-lg-4">
@@ -6,12 +19,12 @@
         <a href="/courses/{{this.slug}}">
           <img class="card-img-top" src={{this.image}} alt="Card image cap">
         </a>
-        <div class="card-body">
+        <div class="card-body card-body-course">
           <a href="/courses/{{this.slug}}">
-            <h5 class="card-title">{{this.name}}</h5>
+            <h5 class="card-title card-title-course">{{this.name}}</h5>
           </a>
           <p class="card-text">{{this.description}}</p>
-          <a href="#" class="btn btn-primary">Mua Khóa Học</a>
+          <a href="#" class="btn btn-primary btn-course">Mua Khóa Học</a>
         </div>
       </div>
     </div>

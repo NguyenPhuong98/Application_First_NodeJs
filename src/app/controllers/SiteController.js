@@ -1,4 +1,5 @@
 const Course = require('../models/Course');
+const Account = require('../models/Account');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
@@ -39,9 +40,48 @@ class SiteController {
         return res.render('search');
     }
 
+    // [POST] /register
+    register(req, res, next) {
+        res.render('register');
+    }
+
+    // [POST] /store
+    storeAccount(req, res, next) {
+        const formData = {
+            fullname: req.body.fullname,
+            email: req.body.email,
+            password: req.body.password,
+        };
+        const account = new Account(formData);
+        account
+            .save()
+            .then(() => res.redirect('/login'))
+            .catch(next);
+    }
+
     // [GET] /login
     login(req, res, next) {
-        return res.render('login');
+        // res.send('Welcome');
+        res.render('login');
+    }
+
+    // [POST] /authentic
+    authentic(req, res, next) {
+        // res.send('Welcome');
+        const query = Account.where({ email: req.body.email });
+        query.findOne(function (error, account) {
+            if (error) return handleError(error);
+            if (account) {
+                if (account.password === req.body.password) {
+                    res.redirect('/');
+                } else {
+                    var formLogin = document.querySelector('form-2');
+                    console.log(formLogin);
+                }
+            } else {
+                res.redirect('/register');
+            }
+        });
     }
 }
 

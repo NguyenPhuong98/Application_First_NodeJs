@@ -13,6 +13,7 @@ const Course = new Schema(
         level: { type: String, default: '' },
         image: { type: String, default: '' },
         slug: { type: String, slug: 'name', unique: true },
+        contentLearn: { type: String, default: '' },
     },
     {
         _id: false,

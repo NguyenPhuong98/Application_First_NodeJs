@@ -1,12 +1,7 @@
 <div class="main">
-    <form action="" method="POST" class="form" id="form-1">
-        <h1 class="heading">Đăng ký thành viên</h1>
+    <form action="/authentic" method="POST" class="form" id="form-2">
+        <h1 class="heading">Thành viên đăng nhập</h1>
         <span class="sub-Heading">Cùng nhau học lập trình miễn phí tại F8</span>
-        <div class="form-group">
-            <label for="fullname" class="form-label">Tên đầy đủ</label>
-            <input type="text" id="fullname" name="fullname" rules="required" class="form-control" placeholder="Eg: Phương Nguyễn">
-            <span class="form-message"></span>
-        </div>
         <div class="form-group">
             <label for="email" class="form-label">Email</label>
             <input type="text" id="email" name="email" rules="required|email" class="form-control" placeholder="Eg: nguyenvana@gmail.com">
@@ -17,40 +12,12 @@
             <input type="password" id="password" name="password" rules="required|min:6" class="form-control" placeholder="Nhập mật khẩu">
             <span class="form-message"></span>
         </div>
-        <div class="form-group">
-            <label for="password-confirm" class="form-label">Nhập lại mật khẩu</label>
-            <input type="password" id="password-confirmed" name="password-confirmed" rules="required|confirmed" class="form-control" placeholder="Nhập lại mật khẩu">
-            <span class="form-message"></span>
-        </div>
-
-        <!-- <div class="form-group">
-            <label for="file" class="form-label">Chọn file</label>
-            <input type="file" id="file" name="file" class="form-control" placeholder="Nhập lại mật khẩu">
-            <span class="form-message"></span>
-        </div> -->
-        <!-- <div class="form-group">
-            <label class="form-label">Giới tính</label>
-            <div class="select-option">
-                <input type="checkbox" name="gender" class="form-control" value="Male">
-                    Nam
-            </div>
-            <div class="select-option">
-                <input type="checkbox" name="gender" class="form-control" value="Female">
-                    Nữ
-            </div>
-            <div class="select-option">
-                <input type="checkbox" name="gender" class="form-control" value="Other">
-                    Other
-            </div>
-            <span class="form-message"></span>
-        </div> -->
-            
         <button class="form-submit">
-                Đăng ký
+                Đăng nhập
         </button>
-    </form>     
-    <script src="src\app\controllers\validator1.js"></script>
-    <script src="src\app\controllers\validator2.js"></script>
+    </form>
+    <script src="/validator1.js"></script>
+    <script src="/validator2.js"></script>
     <script>
         // Validator({
         //     form: '#form-1',
@@ -77,9 +44,9 @@
         //         console.log(data);
         //     }
         // });
-        var registerForm = new Validator('#form-1');
-        registerForm.onSubmit = function(formData) {
-            console.log(formData);
-        }
+        var loginForm = new Validator('#form-2');
+        //loginForm.onSubmit = function(formData) {
+        //    console.log(formData);
+        //}
     </script>
 </div>

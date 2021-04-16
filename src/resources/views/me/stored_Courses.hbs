@@ -1,11 +1,11 @@
-<form class="mt-4" method="POST" name="form-container" action="/courses/handle-form-actions">
-    <h2>Khóa học của tôi</h2>
-    <div class="div" style="font-size: 1.2rem; display: flex; justify-content: space-between;">
-      <a href="/me/trash/courses">Thùng rác({{deletedAcount}})</a>
-      <a href="/courses/create">Tạo mới khóa học</a>
+<form class="mt-5" method="POST" name="form-container" action="/courses/handle-form-actions">
+    <h2 class="title-me-course">Khóa học của tôi</h2>
+    <div class="action-me-course">
+      <a class="item-action-me-course" href="/me/trash/courses">Thùng rác({{deletedAcount}})</a>
+      <a class="item-action-me-course" href="/courses/create">Tạo mới khóa học</a>
     </div>
-    <div class="mt-4 d-flex align-items-center">
-      <div class="form-check">
+    <div class="mt-4 d-flex align-items-center form-handling">
+      <div class="form-check check-me-course">
         <input type="checkbox" class="form-check-input" id="checkbox-all">
         <label class="form-check-label" for="checkbox-all">Chọn tất cả</label>
       </div>
@@ -13,14 +13,14 @@
         <option value="">-- Hành động --</option>
         <option value="delete">Xóa</option>
       </select>
-      <button type="submit" class="btn btn-primary" id="btn-exec" disabled>Áp dụng</button>
+      <button type="submit" class="btn btn-primary btn-apply" id="btn-exec" disabled>Áp dụng</button>
     </div>
     
-    <table class="table mt-4 table-bordered">
+    <table class="table mt-4 table-bordered table-course">
         <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">
                 Tên Khoá học
                 {{!-- <a href="?_sort&column=name&type=asc">
@@ -51,9 +51,15 @@
               <td>{{this.name}}</td>
               <td>{{this.level}}</td>
               <td>{{this.createdAt}}</td>
-              <td>
-                <a href="/courses/{{this._id}}/edit" class="btn btn-link">Sửa</a>
-                <a href="" class="btn btn-link" data-id="{{this._id}}" data-toggle="modal" data-target="#confirmDeleteCourseModal">Xóa</a>
+              <td class="btn-action">
+                <div class="bound-btn">
+                  <span class="oi oi-pencil icon-edit"></span>
+                  <a href="/courses/{{this._id}}/edit" class="btn btn-link btn-edit">Sửa</a>
+                </div>
+                <div class="bound-btn">
+                  <span class="oi oi-delete icon-edit"></span>
+                  <a href="" class="btn btn-link btn-delete" data-id="{{this._id}}" data-toggle="modal" data-target="#confirmDeleteCourseModal">Xóa</a>
+                </div>
               </td>
             </tr>
 
